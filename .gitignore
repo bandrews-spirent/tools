@@ -3,3 +3,5 @@
 !.gitignore
 !/sublime-settings/
 !/sublime-settings/*
+!/benchmarks/
+!/benchmarks/*
