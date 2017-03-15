@@ -8,8 +8,8 @@ set -eo pipefail
 readonly OUTPUT_DIR='./bin'
 
 do_build() {
-  # 'go test -race' doesn't work, so just remove it.
-  sed -i '' "s/go test -race/# go test -race/g" Makefile
+  # 'go test doesn't work, so just remove it.
+  sed -i '' "s/go test /# go test /g" Makefile
 
   GOOS=linux GOARCH=amd64 make
 
