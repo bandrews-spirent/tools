@@ -11,7 +11,7 @@ do_build() {
   # 'go test doesn't work, so just remove it.
   sed -i '' "s/go test /# go test /g" Makefile
 
-  GOOS=linux GOARCH=amd64 make
+  GOOS=linux GOARCH=amd64 make $build_params
 
   git checkout Makefile
 }
@@ -23,13 +23,15 @@ do_copy() {
 }
 
 copy_to_host=''
+build_params=''
 
 usage() {
   echo 'Usage:'
   echo "  $0 [options]"
   echo ''
   echo '  Options:'
-  echo '    -c, --copy-to-host copies the binaries to the remote host (should be SCP form, i.e. user@10.1.1.1:/home/user'
+  echo '    -c, --copy-to-host copies the binaries to the remote host (should be SCP form, i.e. user@10.1.1.1:/home/user)'
+  echo '    -p, --build-params build params required for make'
   exit 0
 }
 
@@ -37,6 +39,7 @@ while [ $# -gt 0 ]
 do
   case "$1" in
     --copy-to-host|-c) copy_to_host="$2"; shift;;
+    --build-params|-p) build_params="$2"; shift;;
     --) shift; break;;
     -*|--help|-h) usage;;
     *)  break;;
