@@ -6,10 +6,10 @@ set -e
 
 do_rebase() {
   git fetch upstream
-  git checkout master
-  git pull upstream master
+  git checkout main
+  git pull upstream main
   git checkout "$branch"
-  git rebase master
+  git rebase main
 }
 
 if [ "$#" -ne 1 ]; then
