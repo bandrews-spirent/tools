@@ -26,6 +26,8 @@ syntax on
 
 :set smartindent
 
+:set relativenumber
+
 " Delete trailing whitespace on all lines on write.
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -39,3 +41,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 :set wildmode=list:longest
 
 :colorscheme zellner
+
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
