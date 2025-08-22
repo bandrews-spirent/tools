@@ -15,18 +15,12 @@ filetype indent on
 " Turn syntax highlighting on.
 syntax on
 
-" Set shift width to 4 spaces.
-:set shiftwidth=4
-
-" Set tab width to 4 columns.
-:set tabstop=4
-
 " Use space characters instead of tabs.
-:set expandtab smarttab
+:set expandtab tabstop=4 shiftwidth=4
 
 :set smartindent
 
-:set relativenumber
+":set relativenumber
 
 " Delete trailing whitespace on all lines on write.
 autocmd BufWritePre * :%s/\s\+$//e
@@ -40,10 +34,25 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Make wildmenu behave like similar to Bash completion.
 :set wildmode=list:longest
 
-:colorscheme zellner
+" :colorscheme zellner
 
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'github/copilot.vim'
+Plug 'Chiel92/vim-autoformat'
+Plug 'tomasiser/vim-code-dark'
+Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
+Plug 'joshdick/onedark.vim'
 call plug#end()
+
+":colorscheme codedark
+:colorscheme default
+"highlight Normal guifg=#FFFFFF ctermfg=15
+
+let g:copilot_filetypes = {
+    \ '*': v:true
+    \ }
+
 
