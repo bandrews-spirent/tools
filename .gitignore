@@ -1,7 +1,2 @@
-/*
-!*.sh
-!.gitignore
-!/sublime-settings/
-!/sublime-settings/*
-!/benchmarks/
-!/benchmarks/*
+password_manager
+subl
