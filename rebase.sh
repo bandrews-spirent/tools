@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Rebase master on top of given branch.
+# Rebase main on top of given branch.
 
 set -e
 
