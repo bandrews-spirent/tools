@@ -1,0 +1,25 @@
+[lfs]
+	concurrenttransfers = 5
+	activitytimeout = 60
+[pack]
+    deltaCacheSize = 2047m
+    packSizeLimit = 2047m
+    windowMemory = 4095m
+[filter "lfs"]
+    clean = git-lfs clean - %f
+    smudge = git-lfs smudge - %f
+    process = git-lfs filter-process
+    required = true
+[http]
+	postBuffer = 524288000
+[core]
+    longpaths=true
+    packedGitLimit = 4095m
+    packedGitWindowSize = 4095m
+    protectNTFS = false
+    compression = 5
+[user]
+	email = barry.andrews@spirent.com
+    name = Barry Andrews
+[safe]
+	directory = C:/Users/titan/table/table
